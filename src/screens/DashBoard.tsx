@@ -1,9 +1,19 @@
-import { View , Text, Image, TouchableOpacity, ScrollView } from "react-native"
+import { View , Text, Image, TouchableOpacity, ScrollView, TextInput, FlatList } from "react-native"
 import StyleDashBoard from "../styles/Style.DashBoard"
-import ButtonCircle from "../components/textButton/buttonCircle"
-import ItemList from "../components/list/ItemList"
+import { useState } from "react"
+import ButtonPlusCircle from "../components/textButton/buttonCircle"
+import StyleButtonPlusCircle from "../styles/Style.txtBut.PlusCircle"
+
 
 const DashBoard = ()=>{
+
+    const [label, setLabel] = useState('')
+    const [List, setList] = useState<string[]>([])
+
+    const handleSetList = (item: string) =>{
+        setList([...List, item])        
+    }
+
     return (
         <View style={StyleDashBoard.container}>
             <Image
@@ -22,17 +32,22 @@ const DashBoard = ()=>{
                 />
                 <Text style={StyleDashBoard.text}>Tasks List</Text>
                 <View style={StyleDashBoard.containeList}>
-                    <View style={StyleDashBoard.header}>
-                        <Text style={StyleDashBoard.titleList}>Daily Tasks</Text>   
-                        <ButtonCircle style={StyleDashBoard.imgPlus} onClick={()=>(console.log('Clicou no circle!'))}/>
+                    <View style={StyleDashBoard.headerC}>
+                        <Text style={StyleDashBoard.titleList}>Daily Tasks</Text>
+                        <TextInput 
+                            style={StyleDashBoard.inputTxt} 
+                            onChangeText={(text)=>(setLabel(text))}
+                        />
+                        <ButtonPlusCircle style={StyleButtonPlusCircle.but} onClick={()=>{handleSetList(label)}}/>
                     </View>
-                    <ScrollView>
-                        <ItemList label={'jbdfjbdjfbsdhf'}/>
-                        <ItemList label={'jbdfjbdjfbsdhf'}/>
-                        <ItemList label={'jbdfjbdjfbsdhf'}/>
-                        <ItemList label={'jbdfjbdjfbsdhf'}/>
-                        <ItemList label={'jbdfjbdjfbsdhf'}/>
-                    </ScrollView>
+                    <FlatList
+                            data={List}
+                            renderItem={({item})=>{
+                                return (
+                                    <Text style={StyleDashBoard.txtList}>{item}</Text>
+                                )
+                            }}
+                        />                        
                 </View>
             </View>
         </View>

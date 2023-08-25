@@ -55,18 +55,31 @@ const StyleDashBoard = StyleSheet.create ({
         fontWeight: 'bold',
         fontSize: 20,
         color: 'black',
-        left: 20,
-        marginTop: 5,
+        left: 5,
     },
-    imgPlus: {
-        marginTop: 8,
-        height: 25,
-        width: 25,
-        left: 205,
-    },
-    header: {
+    headerC: {
         flexDirection: 'row',
+        alignItems: 'center',
+        height: 40,
     },
+    inputTxt: {
+        backgroundColor: 'white',
+        borderRadius: 4,
+        width: 185,
+        height: 30,
+        padding: 2,
+        fontSize: 18,
+        maxWidth: 185,
+        marginLeft: 10,
+    },
+    txtList:{
+        fontSize: 20,
+        marginVertical: 2,
+        marginHorizontal: 4,
+        paddingLeft: 5,
+        backgroundColor: 'white',
+        textAlign: 'center',
+    }
 })
 
 export default StyleDashBoard

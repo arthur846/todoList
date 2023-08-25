@@ -1,13 +1,13 @@
+import React from "react";
 import { StyleProp, TextStyle, TouchableOpacity, Image } from "react-native"
 
 
-interface IpropsButtonCircle {
-    image?: Image
+interface IpropsButtonPlus {
     onClick?: ()=>void
     style?: StyleProp<TextStyle>
 }
 
-const ButtonCircle : React.FC<IpropsButtonCircle> = ({image, onClick, style})=>{
+const ButtonPlusCircle : React.FC<IpropsButtonPlus> = ({onClick, style})=>{
     return (
         <TouchableOpacity style={style} onPress={onClick}>
             <Image
@@ -17,4 +17,5 @@ const ButtonCircle : React.FC<IpropsButtonCircle> = ({image, onClick, style})=>{
     );
 }
 
-export default ButtonCircle
+export default ButtonPlusCircle
+
