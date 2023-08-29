@@ -4,8 +4,20 @@ import ButtonLogin from "../components/textButton/ButtonLogin"
 import StyleButLogin from "../styles/Style.txtBut.Login"
 import TextButton from "../components/textButton/TextButton"
 
+interface Props {
+    navigation: any; 
+  }
 
-const Login = ()=>{
+const Login = ({navigation} : Props)=>{
+
+    const navigateText = ()=>{
+        navigation.navigate('Registration')
+    }
+
+    const navigate = ()=>{
+        navigation.navigate('DashBoard')
+      }
+
     return (
         <View style={StyleLogin.container}>
             <Image
@@ -24,10 +36,10 @@ const Login = ()=>{
                 <TextInput style={StyleLogin.textInput} secureTextEntry={true} placeholder='************'/>
                 <TextButton label='Forgot Password?' style={StyleLogin.txtClick} onClick={()=>(console.log('clicou no forgot!'))}/>
            </View>
-           <ButtonLogin style={StyleButLogin.but} onClick={()=>(console.log('clicou botão!'))}/>
+           <ButtonLogin style={StyleButLogin.but} onClick={()=>(navigate())}/>
            <View style={StyleLogin.txtContainer}>
                 <Text>Already have an account ? </Text>
-                <TextButton label='Sign In' style={StyleLogin.textClickC} onClick={()=>(console.log('clicou no sigin!'))}/>
+                <TextButton label='Sign Up' style={StyleLogin.textClickC} onClick={()=>(navigateText())}/>
             </View>
         </View>
     )

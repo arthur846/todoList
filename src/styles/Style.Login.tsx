@@ -21,7 +21,7 @@ const StyleLogin = StyleSheet.create({
     title: {
         fontWeight: 'bold',
         fontSize: 20,
-        marginTop: 40,
+        marginTop: -35,
     },
     text: {
         fontSize: 18,

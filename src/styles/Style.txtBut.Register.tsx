@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 
 const StyleButRegister = StyleSheet.create ({
     but: {
-        marginTop: 10,
+        marginTop: -5,
     },
 })
 export default StyleButRegister

@@ -16,7 +16,7 @@ const StyleRegistration = StyleSheet.create ({
     title: {
         fontWeight: 'bold',
         fontSize: 22,
-        marginTop: 30,  
+        marginTop: -20,  
         textAlign: 'center',     
     },
     text: {
@@ -25,7 +25,7 @@ const StyleRegistration = StyleSheet.create ({
         textAlign: 'center',        
     },
     subContainer:{
-
+        marginTop: -10,
         width: 360,
         height: 380,
     },
